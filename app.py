@@ -45,9 +45,7 @@ if st.button("Train Model"):
     X_train = scaler.fit_transform(X_train)
     X_test = scaler.transform(X_test)
 
-    # Save the scaler and label encoder for future use
-    joblib.dump(scaler, 'scaler.pkl')
-    joblib.dump(label_encoder, 'label_encoder.pkl')
+
 
     # Building the DNN model
     model = Sequential()
@@ -103,9 +101,7 @@ if st.button("Predict Risk Level"):
     # Load the model
     model = load_model('maternal_health_dnn_model.h5')
 
-    # Load the scaler and label encoder
-    scaler = joblib.load('scaler.pkl')
-    label_encoder = joblib.load('label_encoder.pkl')
+    
 
     # Prepare the input data
     input_data = np.array([[age, systolic_bp, diastolic_bp, bs, body_temp, heart_rate]])
