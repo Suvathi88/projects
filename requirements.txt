@@ -4,4 +4,4 @@ matplotlib
 streamlit
 tensorflow
 seaborn
-sci-kit learn
+scikit-learn
