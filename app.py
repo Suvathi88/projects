@@ -16,13 +16,13 @@ st.title('Maternal Health Risk Prediction')
 
 # Load dataset
 @st.cache_data
-def load_data(Maternal Health Risk Data Set.csv):
-    return pd.read_csv(Maternal Health Risk Data Set.csv)
+def load_data('Maternal Health Risk Data Set.csv'):
+    return pd.read_csv('Maternal Health Risk Data Set.csv')
 
 # File uploader
 uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 if uploaded_file is not None:
-    data = load_data(Maternal Health Risk Data Set.csv)
+    data = load_data('Maternal Health Risk Data Set.csv')
 
     # Show the dataset if needed
     if st.checkbox("Show Dataset"):
