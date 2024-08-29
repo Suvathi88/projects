@@ -2,14 +2,21 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 from tensorflow.keras.models import load_model
-import joblib
+from sklearn.preprocessing import StandardScaler, LabelEncoder
 
 # Load the trained model
 model = load_model('maternal_health_dnn_model.h5')
 
-# Load the scaler and label encoder
-scaler = joblib.load('scaler.joblib')
-label_encoder = joblib.load('label_encoder.joblib')
+# Define the scaler and label encoder as they were used during training
+# Note: Replace these with the actual values used during training if possible
+
+# Example values used during training (You should replace these with actual values)
+scaler = StandardScaler()
+scaler.mean_ = np.array([50, 130, 85, 7.0, 99.0, 75])  # Replace with actual means
+scaler.scale_ = np.array([20, 30, 20, 3.0, 5.0, 10])   # Replace with actual scales
+
+label_encoder = LabelEncoder()
+label_encoder.classes_ = np.array(['low', 'medium', 'high'])  # Replace with actual classes
 
 # Streamlit app
 st.title("Maternal Health Risk Prediction")
